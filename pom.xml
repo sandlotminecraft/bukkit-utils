@@ -10,18 +10,21 @@
 
     <properties>
         <poutils.version>1.2</poutils.version>
-        <spigotapi.version>1.17-R0.1-SNAPSHOT</spigotapi.version>
+        <spigotapi.version>1.19-R0.1-SNAPSHOT</spigotapi.version>
         <vaultapi.version>1.7</vaultapi.version>
+        <mockbukkit.v1.19.version>2.29.0</mockbukkit.v1.19.version>
+        <nbt-api.version>2.11.3</nbt-api.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<!--
     <scm>
         <connection>scm:git:git://github.com/uskyblock/bukkit-utils.git</connection>
         <developerConnection>scm:git:git://github.com/uskyblock/bukkit-utils.git</developerConnection>
         <url>https://github.com/uskyblock/bukkit-utils.git</url>
     </scm>
-
+-->
     <distributionManagement>
         <repository>
             <id>internal.repo</id>
@@ -38,6 +41,10 @@
         <repository> <!-- uSkyBlock dependencies that don't have a (stable) repository -->
             <id>uskyblock-dependencies</id>
             <url>https://www.uskyblock.ovh/maven/dependencies/</url>
+        </repository>
+        <repository> <!-- bStats -->
+            <id>CodeMC</id>
+            <url>https://repo.codemc.org/repository/maven-public</url>
         </repository>
     </repositories>
 
@@ -106,6 +113,17 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.seeseemelk</groupId>
+            <artifactId>MockBukkit-v1.19</artifactId>
+            <version>${mockbukkit.v1.19.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.tr7zw</groupId>
+            <artifactId>item-nbt-api</artifactId>
+            <version>${nbt-api.version}</version>
+        </dependency>
         <dependency>
             <groupId>dk.lockfuglsang.minecraft</groupId>
             <artifactId>po-utils</artifactId>
